@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent any {
+    level "Docker agenet"
+  }
 
   stages {
     stage ('Run Docker Compose') {
