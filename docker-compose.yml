@@ -35,6 +35,6 @@ services:
             MYSQL_USER: rahat
             MYSQL_PASSWORD: rahat
             MYSQL_ROOT_PASSWORD: rahat
-voumes:
+volumes:
     persistent:
 
