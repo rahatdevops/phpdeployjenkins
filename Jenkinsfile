@@ -1,6 +1,6 @@
 pipeline {
   agent any {
-    level "Docker agenet"
+    lavel "Docker agenet"
   }
 
   stages {
