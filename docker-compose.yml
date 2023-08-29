@@ -17,9 +17,7 @@ services:
             - "3306:3306"
         environment:
             MYSQL_DATABASE: myDb
-            MYSQL_USER: rahat
-            MYSQL_PASSWORD: rahat
-            MYSQL_ROOT_PASSWORD: rahat
+            - .env 
         volumes:
             - ./dump:/docker-entrypoint-initdb.d
             - persistent:/var/lib/mysql
@@ -32,9 +30,7 @@ services:
         ports:
             - 82:80
         environment:
-            MYSQL_USER: rahat
-            MYSQL_PASSWORD: rahat
-            MYSQL_ROOT_PASSWORD: rahat
+            - .env
 volumes:
     persistent:
 
