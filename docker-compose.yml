@@ -16,8 +16,11 @@ services:
         ports:
             - "3306:3306"
         environment:
-            MYSQL_DATABASE: myDb
-            - .env 
+            - MYSQL_DATABASE=myDb
+            - MYSQL_USER=${DB_USERNAME}
+            - MYSQL_PASSWORD=${DB_PASSWORD}
+            - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+        
         volumes:
             - ./dump:/docker-entrypoint-initdb.d
             - persistent:/var/lib/mysql
@@ -30,7 +33,11 @@ services:
         ports:
             - 82:80
         environment:
-            - .env
+            
+            - MYSQL_USER=${DB_USERNAME}
+            - MYSQL_PASSWORD=${DB_PASSWORD}
+            - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+        
 volumes:
     persistent:
 
